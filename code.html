@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>devon4net</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+<script>
+$(document).ready(function() {    
+    
+    $("#codepenDiv").hide();
+    $("#jwtDiv").hide(); 
+    $("#githubDiv").hide(); 
+    $("#graylogDiv").hide(); 
+    $("#swaggerDiv").hide();
+    $("#dockerDiv").hide();
+    $("#corsDiv").hide();
+    $("#coreDiv").hide();
+
+    (function($) {
+        $.fn.HideAll = function() {   
+           $("#devonDiv").hide();
+           $("#codepenDiv").hide();
+           $("#jwtDiv").hide();
+           $("#githubDiv").hide();
+           $("#graylogDiv").hide();
+           $("#swaggerDiv").hide();
+           $("#dockerDiv").hide();
+           $("#corsDiv").hide();
+           $("#coreDiv").hide();
+           $("imgClick").hide();
+        };
+    })(jQuery);
+
+    (function($) {
+        $.fn.ShowDiv = function(divName) {
+           $(this).HideAll();
+           $("#"+divName).fadeIn(1000);
+        };
+    })(jQuery);    
+
+
+    (function($) {
+        $.fn.toggleElement = function(elementName) {  
+           $("#"+elementName).toggle();
+        };
+    })(jQuery);    
+
+});
+
+
+
+</script>
+
+</head>
+
+<body data-spy="scroll" data-target=".DEVON-SIDEBAR" data-offset="50">
+    <!-- NAVIGATION-->
+    <div class="fixed-top" style="pointer-events: none">
+        <!-- NAV BAR -->
+        <nav class="navbar navbar-expand-md NAV-MENU shadow" style="pointer-events: auto;">
+            <a href="https://devonfw.com" class="navbar-brand">
+                <img class="LogoDevonfw" src="images/DevonfwOASPWhite.png" alt="devonfw">
+            </a>
+            <button class="navbar-toggler btn-secondary" data-toggle="collapse" data-target="#navbarMenu">&#9776
+                <span class="navbar-toggle-icon"></span>
+            </button>
+
+            <div id="navbarMenu" class="collapse navbar-collapse nav-properties text-center">
+                <ul class="nav nav-pills row-1 justify-content-center align-items-center text-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Documents</a>                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="code.html">Code</a>                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="getstarted.html">Get Started</a>                        
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- SIDE BAR -->
+        <div class="row container-fluid DEVON m-0 px-0 " style="pointer-events: none">
+            <div class="col-12 col-md-3 m-0 p-0">
+                <nav class="navbar container-fluid DEVON-SIDEBAR d-none d-md-block" style="pointer-events: auto;">
+                    <!--links-->
+                    <ul class="navbar-nav">
+                        <!-- INSERT SIDE NAVBAR ITEMS e.g.:-->
+                        <li class="nav-item  pl-4 py-2">
+                            <a class="nav-link font-weight-bold" href="https://github.com/oasp/oasp4net/">devon4net GitHub</a>
+                        </li>
+                        <li class="nav-item  pl-4 py-2">
+                            <a class="nav-link font-weight-bold" href="https://www.nuget.org/packages?q=oasp">devon4net Nuget.org</a>                           
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container-fluid DEVON DEVON-CONTAINER m-0 px-0">
+        <div class="d-none">
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="row m-0 p-0">
+            <!-- GHOST COLUMN-->
+            <div class="col-0 col-md-3 m-0 p-0">
+
+            </div>
+            <!-- CONTENT -->
+            <div class="col-12 col-md-9 m-0 p-0">
+                <!-- INSERT CUSTOM CONTENT HERE -->
+                <section id="code-section" class="cut-tl">
+                    <div class="text-center">
+                        <h1/>
+                        <h1/>
+                        <h1>devon4net</h1>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row text-center">
+                            <!-- Radial menu start-->
+                            <div class="menu" >
+                              <div class="btn trigger" onClick="$(this).HideAll();$('#devonDiv').show();$(this).toggleElement('imgClick');">
+                                <span>
+                                    <img src="images/logo_blue.png" width="55px"/>
+                                </span>                                                            
+                              </div>
+                              <img id="imgClick" class="imghand" src="images/click.png"/>  
+                              <div class="icons">
+                                 <div class="rotater">
+                                  <div class="btn btn-icon" id="github" onClick="$(this).ShowDiv('githubDiv');">
+                                    <i class="fa fa-github"></i>
+                                  </div>
+                                </div>
+                                <div class="rotater">
+                                  <div class="btn btn-icon" onClick="$(this).ShowDiv('graylogDiv');">
+                                    <img class="imgCarrousel" src="images/graylog.png" vertical-align="center">
+                                  </div>
+                                </div>
+                                <div class="rotater">
+                                  <div class="btn btn-icon" onClick="$(this).ShowDiv('swaggerDiv');">
+                                    <img class="imgCarrousel" src="images/swagger.png" vertical-align="center">
+                                  </div>
+                                </div>
+                                <div class="rotater" onClick="$(this).ShowDiv('dockerDiv');">
+                                  <div class="btn btn-icon">
+                                    <img class="imgCarrousel" src="images/docker.png" vertical-align="center">
+                                  </div>
+                                </div>
+                                <div class="rotater">
+                                  <div class="btn btn-icon" onClick="$(this).ShowDiv('jwtDiv');">
+                                    <img class="imgCarrousel" src="images/jwt.png" vertical-align="center">
+                                  </div>
+                                </div>
+                                <div class="rotater">
+                                  <div class="btn btn-icon" onClick="$(this).ShowDiv('corsDiv');">
+                                    <img class="imgCarrouselSmall" src="images/cors.png" vertical-align="center">
+                                  </div>
+                                </div>
+                                <div class="rotater">
+                                  <div class="btn btn-icon" id="codepen" onClick="$(this).ShowDiv('codepenDiv');">
+                                    <img class="imgCarrousel" src="images/nuget.png" vertical-align="center">
+                                  </div>
+                                </div>
+                                <div class="rotater">
+                                  <div class="btn btn-icon" onClick="$(this).ShowDiv('coreDiv');">
+                                    <img class="imgCarrouselMedium" src="images/core.png" vertical-align="center">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>            
+                            <!-- Radial menu end-->                
+                            <!-- INSERT CODE LINKS -->
+                            <div class="col-12 col-md-4 py-5 px-3"/>
+                            <div class="col-12 col-md-4 py-5 px-3"/>
+                            <div class="col-12 col-md-4 py-5 px-3"/>
+                            <div class="col-12 col-md-4 py-5 px-3"/>
+                            <div class="col-12 col-md-4 py-5 px-3"/>
+                        </div>
+                    </div>
+
+                </section>
+                <div id="pages">
+                    <div id="devonDiv">
+                        <h3>
+                            <b>.Net stack on devonfw platform</b>
+                        </h3>
+                        <p>devon4net (part of <a href="https://www.devonfw.com">devonfw</a> platform) is a modularized solution that provides advanced features for industrial applications.</p>
+                        <p>Each feature is divided in nuget packages in order to provide a scalable .net core solution.</p>
+                        <p>You can get all the resources at Github and Nuget site:</p>
+                            <span>
+                                <a href="https://github.com/oasp/oasp4net/">Github</a> | 
+                                <a href="https://www.nuget.org/packages?q=oasp">Nuget</a>
+                            </span>
+                        </p>
+                    </div>                      
+                    <div id="coreDiv">
+                        <h3>
+                            <b>.Net Core + Entity Framework Core</b>
+                        </h3>
+                        <p>devon4net is designed under the new and powerfull .net core platform.</p>
+                        <p>Entity Framework for .net core is fully supported on devon4net. Sync and Async methods also are provided. Lazy data loading by demand is also included.</p>
+                            <span>
+                                <a href="https://www.microsoft.com/net/learn/what-is-dotnet">.NET platform</a> | 
+                                <a href="https://docs.microsoft.com/en-us/ef/core/">Entity Framework</a>
+                            </span>
+                        </p>
+                    </div>                      
+                    <div id="corsDiv">
+                        <h3>
+                            <b>Cross-Origin Resource Sharing - CORS</b>
+                        </h3>
+                        <p>Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin.</p>
+                        <p>devon4net provides by default multiple domain CORS features.</p>
+                            <span>
+                                <a href="https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-2.1">CORS</a>
+                            </span>
+                        </p>
+                    </div>                       
+                    <div id="dockerDiv">
+                        <h3>
+                            <b>Docker</b>
+                        </h3>
+                        <p>A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.</p>
+                        <p>devon4net offers fully compatibility with Linux containers. That means you can distribute multiplatform application tha runs on Windows, Linux and iOS systems.</p>
+                            <span>
+                                <a href="https://www.docker.com">Docker</a>
+                            </span>
+                        </p>
+                    </div>                      
+                    <div id="swaggerDiv">
+                        <h3>
+                            <b>Swagger</b>
+                        </h3>
+                        <p>Swagger offers the most powerful and easiest to use tools to take full advantage of the OpenAPI Specification.</p>
+                        <p>devon4net provides swagger support by default. Swagger allows share your API contract to multiple teams.</p>
+                            <span>
+                                <a href="https://swagger.io/">Swagger</a>
+                            </span>
+                        </p>
+                    </div>                       
+                    <div id="graylogDiv">
+                        <h3>
+                            <b>Graylog</b>
+                        </h3>
+                        <p>Graylog provides log data available and accessible in one central location.</p>
+                        <p>This feature is available, and it is very useful on microservices environment or distributed systems.</p>
+                            <span>
+                                <a href="https://www.graylog.org">Graylog</a>
+                            </span>
+                        </p>
+                    </div>                    
+                    <div id="codepenDiv">
+                        <h3>
+                            <b>Nuget</b>
+                        </h3>
+                        <p>devon4net (part of <a href="https://www.devonfw.com">devonfw</a> platform) is a modularized solution that provides advanced features for industrial applications.</p>
+                        <p>Each feature is divided in nuget packages in order to provide a scalable .net core solution.</p>
+                        <p>You can get all the updated resources at Github and Nuget site:</p>
+                            <span>
+                                <a href="https://github.com/oasp/oasp4net/">Github</a> | 
+                                <a href="https://www.nuget.org/packages?q=oasp">Nuget</a>
+                            </span>
+                        </p>
+                    </div>
+                    <div id="githubDiv">
+                        <h3>
+                            <b>Get the resources at Github</b>
+                        </h3>
+                        <p>All devonfw and devon4net is totally opensource under Apache License.</p>
+                        <p> You can get all the resources, samples and components as well on the following links:</p>
+                        </p>
+                            <span>
+                                <a href="https://github.com/oasp/">devonfw</a>
+                            </span> |
+                            <span>
+                                <a href="https://github.com/oasp/oasp4net">devon4net</a>
+                            </span> 
+                        </p>
+                    </div>                    
+                    <div id="jwtDiv">
+                        <h3>
+                            <b>JSON Web Tokens - JWT</b>
+                        </h3>
+                        <p>JSON Web Tokens are an open, industry standard <a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a> method for representing claims securely between two parties.</p>
+                        <p>devon4net provides JWT support by default enabling securized communications between client and server. An example of this could be  Angular and mobile applications with devon4net backend.</p>
+                            <span>
+                                <a href="https://jwt.io/">JWT</a>
+                            </span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- FOOTER -->
+    <div class="container-fluid bg-dark text-white footer footer-bottom">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12 text-xs-center">
+
+                </div>
+            </div>
+            <br>
+            <div class="row d-none d-sm-block">
+                <div class="col-md-6 col-sm-6  ">
+                    <h3>
+                        <b>Important Links</b>
+                    </h3>
+                    <p>
+                        <span>
+                            <a href="https://devonfw.com" class="text-white">devonfw</a>
+                        </span> |
+                        <span>
+                            <a href="https://devonfw.com/devon4j" class="text-white">devon4J</a>
+                        </span> |
+                        <span>
+                            <a href="https://devonfw.com/devon4js" class="text-white">devon4JS</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-5 col-12 text-xs-center">
+                    <p>© Capgemini 2018
+                        <span style="margin-left: 17mm">
+                            <a href="https://devonfw.com/terms-of-use" class="text-white">Terms of Use</a>
+                        </span>
+                    </p>
+                    <p class="destacado">This page is maintained by Capgemini</p>
+                </div>
+                <!--iconos-->
+                <div class="col-lg-4 col-md-12 col-sm-4 col-12 text-xs-center ">
+                    <a href="https://www.slideshare.net/capgemini"><img src="images/slideshare.png" class="icon m-2" width="30px" height="30px" mb-1></a>
+                    <a href="https://www.facebook.com/Capgemini/"><img src="images/facebook.png" class="icon m-2" width="30px" height="30px" mb-1></a>
+                    <a href="https://twitter.com/capgemini"><img src="images/twitter.png" class="icon m-2" width="30px" height="30px" mb-1></a>
+                    <a href="http://www.linkedin.com/company/capgemini"><img src="images/linkedin.png" class="icon m-2" width="30px" height="30px" mb-1></a>
+                    <a href="https://www.youtube.com/user/capgeminimedia"><img src="images/youtube.png" class="icon m-2" width="30px" height="30px" mb-1></a>
+                </div>
+                <div class="col-lg-2 col-md-12 col-sm-2 col-12 text-xs-center m-2">
+                    <a href="https://www.es.capgemini.com/">
+                        <img src="images/CapgeminiLogoWhite.png" width="150px" height="30px" ml-0>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- Bootstrap 4 JS --> 
+
+
+
+</html>
